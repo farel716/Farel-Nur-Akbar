@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "nama": "Bawang Merah",
+        "harga": "10.000",
+        "stok": "100"
+    },
+    {
+        "id": 2,
+        "nama": "Bawang Putih",
+        "harga": "12.000",
+        "stok": "120"
+    }
+]
