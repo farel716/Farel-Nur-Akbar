@@ -8,55 +8,47 @@ $pelanggan = new Pelanggan();
 $barand_data = $barand->read();
 $pelanggan_data = $pelanggan->read();
 
-// Proses untuk menghapus data barand
 if (isset($_GET['delete_barand'])) {
     $barand->delete($_GET['delete_barand']);
-    header("Location: index.php"); // Refresh halaman setelah menghapus data
+    header("Location: index.php"); 
     exit;
 }
 
-// Proses untuk menghapus data pelanggan
 if (isset($_GET['delete_pelanggan'])) {
     $pelanggan->delete($_GET['delete_pelanggan']);
-    header("Location: index.php"); // Refresh halaman setelah menghapus data
+    header("Location: index.php"); 
     exit;
 }
 
-// Proses untuk mengedit data barand
 if (isset($_POST['edit_barand'])) {
     $barand->update($_POST['id'], $_POST['nama'], $_POST['harga'], $_POST['stok']);
-    header("Location: index.php"); // Refresh halaman setelah mengedit data
+    header("Location: index.php"); 
     exit;
 }
 
-// Proses untuk mengedit data pelanggan
 if (isset($_POST['edit_pelanggan'])) {
     $pelanggan->update($_POST['id'], $_POST['nama'], $_POST['email'], $_POST['telepon'], $_POST['alamat']);
-    header("Location: index.php"); // Refresh halaman setelah mengedit data
+    header("Location: index.php"); 
     exit;
 }
 
-// Proses untuk menambah data barand
 if (isset($_POST['add_barand'])) {
     $barand->create($_POST['nama'], $_POST['harga'], $_POST['stok']);
-    header("Location: index.php"); // Refresh halaman setelah menambah data
+    header("Location: index.php"); 
     exit;
 }
 
-// Proses untuk menambah data pelanggan
 if (isset($_POST['add_pelanggan'])) {
     $pelanggan->create($_POST['nama'], $_POST['email'], $_POST['telepon'], $_POST['alamat']);
-    header("Location: index.php"); // Refresh halaman setelah menambah data
+    header("Location: index.php"); 
     exit;
 }
 
-// Form untuk mengedit data barand
 $edit_barand = null;
 if (isset($_GET['edit_barand'])) {
     $edit_barand = $barand->find($_GET['edit_barand']);
 }
 
-// Form untuk mengedit data pelanggan
 $edit_pelanggan = null;
 if (isset($_GET['edit_pelanggan'])) {
     $edit_pelanggan = $pelanggan->find($_GET['edit_pelanggan']);
